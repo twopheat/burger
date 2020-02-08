@@ -1,0 +1,37 @@
+<h1>TASK|ist</h1>
+
+<h2>Incomplete TASKS</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+    <li>
+      {{name}}<button class="burger-btn" value="{{id}}">DEVOURED</button>
+    </li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Finished TASKS</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+    <li>
+      {{name}}
+    </li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Task</h2>
+<form class="create-form" action="/api/burgers" method="POST">
+
+  <div class="form-group">
+    <label for="ca">Task:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+  
+
+  <button type="submit">Add burger</button>
+</form>
