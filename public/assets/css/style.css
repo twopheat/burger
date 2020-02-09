@@ -23,3 +23,9 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
   -webkit-box-shadow: 0 1px 0 0 #e7b446;
   box-shadow: 0 1px 0 0 #e7b446;
 }
+body {
+  background-image:url("../img/bkg.png")
+}
+.rounder {
+  border-radius:10px;
+}

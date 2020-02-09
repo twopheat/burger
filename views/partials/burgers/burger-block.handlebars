@@ -1,9 +1,13 @@
-<li class="card grey lighten-2">
+<div class="card red lighten-2">
+<li class="grey lighten-2">
 	<div class="center">{{name}}</div>
 	<br>
-	<button class="change-devour btn yellow darken-2" data-id="{{id}}" data-newdevour="{{devour}}">
-		{{#if devour}}DEVOUR{{else}}✅{{/if}}
-	</button>
-
-	<button class="delete-burger btn red" data-id="{{this.id}}">Wipe Table</button>
+	<div class="change-devour" data-id="{{id}}" data-newdevour="{{devour}}">
+		{{#if devour}}<button class="col s3 offset-s1 btn yellow darken-2">EAT</button>{{else}}{{/if}}
+		
+	<button class="delete-burger col s3 offset-s1 btn red" data-id="{{this.id}}">DEL</button>
+	</div>
+	<br>
+	<br>
 </li>
+</div>

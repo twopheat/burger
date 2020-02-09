@@ -1,49 +1,60 @@
-<div class="card">
-<h3 class="center brown lighten-5">MVC BURGERstand POS</h3>
-<br>
-<h5 class="center red yellow-text">Welcome to Eat-Da-Burger Dashboard</h5>
-<br>
-<div class="container row">
-<form class="create-form">
-
-  <div class="form-group">
-    
-    <label for="ca"><h4 class="col s8">Enter Order Here:</h4></label>
-    <div class="col s2"></div><input class="col s8" type="text" id="ca" name="name">
+<div class="card rounder">
+  <div class="red lighten-3 yellow-text row">
+    <img class="col s4 offset-s2" width="250px" height="auto" src="/assets/img/logo.png">
+    <br>
+    <h3 class="center ">POS Dashboard</h3>
+    <br>
+     <div class="row">
+    <a class="center btn black-text grey lighten-4 col s4 offset-s1" href="https://twopheat.github.io/Portfolio/contact.html">POS Support</a>
   </div>
-
-  <div class="form-group">
-    <label for="devoured"></label><br>
-    <input type="radio" name="devoured" value="1" checked><br>
   </div>
+ 
+  <br>
+  <div class="row">
+    <form class="create-form">
 
-  <button class="btn green" type="submit">Send Order</button>
-</form>
-<br>
-<div class="row">
-<h3 class="col s6">Plates Served</h3>
-<h3 class="col s6">Dirty Plates</h3>
+      <div class="form-group">
 
-</div>
-<div class="row">
-<ul class="col s6">
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devour=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+        <label for="ca" class="">
+          <h4 class="col s6 offset-s3">Enter Order Here:</h4>
+        </label>
+        <div class="col s8"><input class="col s8 offset-s3" type="text" id="ca" name="name">
+        </div>
+      </div>
 
-<ul class="col s6">
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devour=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-<br>
-</div>
+      <div class="form-group">
+        <label for="devoured"></label><br>
+        <input name="devoured" type="radio" value="1" checked>
+        <input name="devoured" type="radio" value="0">
+      </div>
 
-</div>
+      <button class="btn green" type="submit">Send Order</button>
+    </form>
+    <br>
+    <div class="row">
+      <h3 class="col s6 center">SERVED</h3>
+      <h3 class="col s6 center">DEVOURED</h3>
+
+    </div>
+    <div class="row">
+      <ul class="col s6">
+        {{#each burgers}}
+        {{#unless devoured}}
+        {{> burgers/burger-block devour=true}}
+        {{/unless}}
+        {{/each}}
+      </ul>
+
+      <ul class="col s6">
+        {{#each burgers}}
+        {{#if devoured}}
+        {{> burgers/burger-block devour=false}}
+        {{/if}}
+        {{/each}}
+      </ul>
+      <br>
+    </div>
+
+  </div>
 
 </div>
