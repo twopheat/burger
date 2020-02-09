@@ -1,37 +1,49 @@
-<h1>TASK|ist</h1>
+<div class="card">
+<h3 class="center brown lighten-5">MVC BURGERstand POS</h3>
+<br>
+<h5 class="center red yellow-text">Welcome to Eat-Da-Burger Dashboard</h5>
+<br>
+<div class="container row">
+<form class="create-form">
 
-<h2>Incomplete TASKS</h2>
+  <div class="form-group">
+    
+    <label for="ca"><h4 class="col s8">Enter Order Here:</h4></label>
+    <div class="col s2"></div><input class="col s8" type="text" id="ca" name="name">
+  </div>
 
-<ul>
+  <div class="form-group">
+    <label for="devoured"></label><br>
+    <input type="radio" name="devoured" value="1" checked><br>
+  </div>
+
+  <button class="btn green" type="submit">Send Order</button>
+</form>
+<br>
+<div class="row">
+<h3 class="col s6">Plates Served</h3>
+<h3 class="col s6">Dirty Plates</h3>
+
+</div>
+<div class="row">
+<ul class="col s6">
   {{#each burgers}}
     {{#unless devoured}}
-    <li>
-      {{name}}<button class="burger-btn" value="{{id}}">DEVOURED</button>
-    </li>
+      {{> burgers/burger-block devour=true}}
     {{/unless}}
   {{/each}}
 </ul>
 
-<h2>Finished TASKS</h2>
-
-<ul>
+<ul class="col s6">
   {{#each burgers}}
     {{#if devoured}}
-    <li>
-      {{name}}
-    </li>
+      {{> burgers/burger-block devour=false}}
     {{/if}}
   {{/each}}
 </ul>
+<br>
+</div>
 
-<h2>Add a Task</h2>
-<form class="create-form" action="/api/burgers" method="POST">
+</div>
 
-  <div class="form-group">
-    <label for="ca">Task:</label>
-    <input type="text" id="ca" name="name">
-  </div>
-  
-
-  <button type="submit">Add burger</button>
-</form>
+</div>

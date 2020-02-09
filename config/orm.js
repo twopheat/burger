@@ -93,17 +93,15 @@ var orm = {
     queryString += " WHERE ";
     queryString += condition;
 
-    console.log(queryString);
-    connection.query(queryString, function (err, result) {
-     if (err)  {
-       throw err;
-     }
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
 
-     cb(result);
+      cb(result);
     });
   }
 };
 
-
-// Export the orm object for the model (cat.js).
+// Export the orm object for the model (burger.js).
 module.exports = orm;
